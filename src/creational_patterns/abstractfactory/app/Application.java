@@ -1,0 +1,20 @@
+package creational_patterns.abstractfactory.app;
+
+import creational_patterns.abstractfactory.buttons.Button;
+import creational_patterns.abstractfactory.checkboxes.Checkbox;
+import creational_patterns.abstractfactory.factories.GUIFactory;
+
+public class Application {
+    private Button button;
+    private Checkbox checkbox;
+
+    public Application(GUIFactory factory) {
+        button = factory.createButton();
+        checkbox = factory.createCheckbox();
+    }
+
+    public void paint() {
+        button.paint();
+        checkbox.paint();
+    }
+}
